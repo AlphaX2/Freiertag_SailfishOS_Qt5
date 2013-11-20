@@ -1,8 +1,8 @@
 %dir /usr/lib/debug
 %dir /usr/lib/debug/.build-id
-%dir /usr/lib/debug/.build-id/5e
+%dir /usr/lib/debug/.build-id/02
 %dir /usr/lib/debug/usr
 %dir /usr/lib/debug/usr/bin
-/usr/lib/debug/.build-id/5e/c40fea670c5a61e2feb41a729c51c35b0acde6
-/usr/lib/debug/.build-id/5e/c40fea670c5a61e2feb41a729c51c35b0acde6.debug
+/usr/lib/debug/.build-id/02/7f83f0057148e207964a3509d02f0b8a09f8bc.debug
+/usr/lib/debug/.build-id/02/7f83f0057148e207964a3509d02f0b8a09f8bc
 /usr/lib/debug/usr/bin/Freiertag.debug

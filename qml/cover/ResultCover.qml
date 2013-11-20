@@ -26,8 +26,11 @@ Rectangle {
         CoverAction {
             iconSource: "image://theme/icon-l-right"
             onTriggered: {
-                // subtract -1 from countRows because counted rows are 6, but starting with 0 means
-                // that currentIndex have to be smaller than 5!
+                /*
+                Subtract -1 from countRows() because counted rows are 6, but as always:
+                counting in the dev world is starting with 0. That means, that currentIndex
+                have to be smaller than 5, because the max. is 5!
+                */
                 if(currentIndex < freiModel.countRows()-1){currentIndex += 1; updateCoverText()}
             }
         }
@@ -41,22 +44,6 @@ Rectangle {
         anchors.verticalCenter: parent.verticalCenter
         width: parent.width
         spacing: Theme.paddingMedium
-
-        Label {
-            id: land
-            x: Theme.paddingSmall
-            text: mainPage.land
-            font.pixelSize: Theme.fontSizeSmall-10
-            color: Theme.secondaryColor
-        }
-
-        Label {
-            id: jahr
-            x: Theme.paddingSmall
-            text: mainPage.jahr
-            font.pixelSize: Theme.fontSizeSmall-5
-            color: Theme.secondaryColor
-        }
 
         Label {
             id: event

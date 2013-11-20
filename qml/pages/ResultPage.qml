@@ -6,10 +6,14 @@ Page {
     id: pageResult
 
     property string headerTitle
+    property alias model: listView.model
 
+    /*
+    The model will be set from MainPage via property alias.
+    Look there for some information about the reason.
+    */
     SilicaListView {
         id: listView
-        model: freiModel
         anchors.fill: parent
         spacing: Theme.paddingMedium
         header: PageHeader {
@@ -21,7 +25,6 @@ Page {
         delegate: BackgroundItem {
             Column {
                 width: pageResult.width
-                // new version
                 height: childrenRect.height
 
                 Label {

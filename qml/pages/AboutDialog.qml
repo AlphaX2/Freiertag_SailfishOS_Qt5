@@ -73,7 +73,7 @@ Dialog {
         Button {
             anchors.horizontalCenter: parent.horizontalCenter
             text: "Code"
-            onClicked: Qt.openUrlExternally("http://www.github.com/AlphaX2/")
+            onClicked: Qt.openUrlExternally("http://www.github.com/AlphaX2/Freiertag_SailfishOS_Qt5")
         }
     }
 }

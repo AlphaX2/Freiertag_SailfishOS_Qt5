@@ -16,8 +16,13 @@ Page {
         startCover.type = typeSelect.model.get(typeSelect.currentIndex).name
     }
 
+    /*
+    This is working as an switch: In the moment the MainPage is activ/shown - the cover switches back to
+    the start cover and resets the model of the ResultPage. In the PullDownMenu you'll find information
+    why the model must be set (back) every time.
+    */
     onStatusChanged: {
-        if(status === PageStatus.Active){mainApplicationWindow.cover = startCover}
+        if(status === PageStatus.Active){mainApplicationWindow.cover = startCover; resultPage.model = null}
     }
     
     // To enable PullDownMenu, place our content in a SilicaFlickable
@@ -46,14 +51,29 @@ Page {
                     bland = bland.replace("ü","ue")
                     bland = bland.replace("-","_")
 
-                    // parses the results and populates the model
-                    // it's true if everything went fine, also it's finished when true
+                    /*
+                    parses the results and populates the model
+                    ret is true, if everything went fine (no parsing errors) and
+                    also the population of the model is finished, so it can be used now.
+                    */
                     var ret = frei.suche(bland, jahr, type)
 
-                    // if true the model is ready - now you can push to resultPage without any doubts
+                    // If true the model is ready - now you can push to resultPage without any doubts
                     if(ret){
+                        /*
+                        The ResultPage is instanciated already in the "main" qml file (Freiertag.qml),
+                        to access the the header title from QML. But the ResultPage uses also a model that
+                        is set way too early, because of the creation of the view via SailfishApp - this leads
+                        to some strange behaviour. For example the ListView holds the real results, but also an
+                        amount of empty rows. Also the console output shows error messages. This can be prevented
+                        by setting the model again, or maybe by loading the whole ResultPage just in the moment it's
+                        needed, but in this case there seems to be no way, to set header title.
+                        */
+                        resultPage.model = freiModel
                         resultPage.headerTitle = jahrSelect.value+" | "+bundeslandSelect.value
                         pageStack.push(resultPage)
+
+                        // set new cover, that shows the results and allows the user to switch between them as CoverAction
                         mainApplicationWindow.cover = Qt.resolvedUrl("/usr/share/Freiertag/qml/cover/ResultCover.qml")
                     }
                 }
