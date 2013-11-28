@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Name=Freiertag
+Icon=/usr/share/icons/hicolor/86x86/apps/harbour-freiertag.png
+Exec=harbour-freiertag
+

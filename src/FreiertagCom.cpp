@@ -26,7 +26,7 @@ bool FreiertagCom::suche(QString bland, QString jahr, QString typ)
 	if(typ == "Schulferien")
 	{
 		qDebug() << "Suche Ferien!";
-        QString path = QString("%1data/%2/ferien/Ferien_%3_%2.ics").arg("/usr/share/Freiertag/").arg(jahr).arg(bland);
+        QString path = QString("%1data/%2/ferien/Ferien_%3_%2.ics").arg("/usr/share/harbour-freiertag/").arg(jahr).arg(bland);
         qDebug() << "Try to open: " << path;
         this->parser(path, bland);
         return true;
@@ -34,7 +34,7 @@ bool FreiertagCom::suche(QString bland, QString jahr, QString typ)
     else if(typ == "gesetzliche Feiertage")
 	{
 		qDebug() << "Suche gesetzliche Feiertage";
-        QString path = QString("%1data/%2/feiertage/Feiertage_%3_%2.ics").arg("/usr/share/Freiertag/").arg(jahr).arg(bland);
+        QString path = QString("%1data/%2/feiertage/Feiertage_%3_%2.ics").arg("/usr/share/harbour-freiertag/").arg(jahr).arg(bland);
         qDebug() << "Try to open: " << path;
         this->parser(path, QString(""));
         return true;
@@ -42,7 +42,7 @@ bool FreiertagCom::suche(QString bland, QString jahr, QString typ)
     else if(typ == "alle Feiertage")
 	{
 		qDebug() << "Suche alle Feiertage";
-        QString path = QString("%1data/%2/feiertage/Feiertage_%2.ics").arg("/usr/share/Freiertag/").arg(jahr);
+        QString path = QString("%1data/%2/feiertage/Feiertage_%2.ics").arg("/usr/share/harbour-freiertag/").arg(jahr);
         qDebug() << "Try to open: " << path;
         this->parser(path, QString(""));
         return true;

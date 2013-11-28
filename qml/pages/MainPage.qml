@@ -74,7 +74,7 @@ Page {
                         pageStack.push(resultPage)
 
                         // set new cover, that shows the results and allows the user to switch between them as CoverAction
-                        mainApplicationWindow.cover = Qt.resolvedUrl("/usr/share/Freiertag/qml/cover/ResultCover.qml")
+                        mainApplicationWindow.cover = Qt.resolvedUrl("/usr/share/harbour-freiertag/qml/cover/ResultCover.qml")
                     }
                 }
             }

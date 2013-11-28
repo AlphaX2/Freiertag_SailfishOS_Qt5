@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 
     view->rootContext()->setContextProperty("frei", frei);
     view->rootContext()->setContextProperty("freiModel", freiModel);
-    view->setSource(SailfishApp::pathTo("qml/Freiertag.qml"));
+    view->setSource(SailfishApp::pathTo("qml/harbour-freiertag.qml"));
     view->showFullScreen();
 
     return app->exec();
