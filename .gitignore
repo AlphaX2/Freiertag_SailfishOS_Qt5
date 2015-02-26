@@ -1,0 +1,9 @@
+/*.list
+/*.user*
+/Makefile*
+/RPMS
+/moc/
+/obj/
+/rcc/
+/rpm/*.spec
+/harbour-freiertag
